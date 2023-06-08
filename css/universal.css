@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap%22");
 
 :root{
-    --color-background: #075C01b0;
+    --color-background: #075C0177;
     --color-accent: #10d003;
 }
 
@@ -9,15 +9,14 @@
 body
 {
     font-family: "Kanit", sans-serif;
-}
-
-#left-panel{
     background: var(--color-background);
 }
 
-#footer{
-    background: var(--color-background);
+.no-background{
+    background: mintcream;
 }
+
+
 
 
 
