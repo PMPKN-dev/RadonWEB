@@ -13,22 +13,26 @@
 
 <body>
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid" style="margin: 20px">
-    <div class="navbar-header">
-      <h1>Radon</h1>
-    </div>
+    <div class="container-fluid" style="margin: 20px">
+        <div class="navbar-header">
+            <h1>Radon</h1>
+        </div>
 
   </div>
 </nav>
 
 <div class="container-fluid text-Left">
-  <div class="row content">
-    <div id="left-panel" class="col-sm-2 sidenav text-center">
-        <p><button onclick="document.location='./Index.html'" class="btn btn-outline-dark" >Index</button></p>
-        <p><button onclick="document.location='./table.html'" class="btn btn-outline-dark" >Table</button></p>
+
+    <div class="row content" >
+    <div id="left-panel" class="col-sm-2 sidenav text-center" >
+        <p style="margin: 3px"><button onclick="document.location='./Index.html'" class="btn btn-outline-dark" >Index</button></p>
+        <p style="margin: 3px"><button onclick="document.location='./table.html'" class="btn btn-outline-dark" >Table</button></p>
     </div>
     <div class="col-sm-10">
-      <div  class="container-fluid">
+        <input id="testInput" placeholder="admin password">
+        <button onclick="populateTables()" class="btn btn-outline-dark" style="margin: 5px">Load Customers</button>
+
+        <div  class="container-fluid">
         <!--This is here for copy and paste -->
 
         <!--#region main  -->
@@ -52,16 +56,18 @@
       </div>
     </div>
 
+
   </div>
+
 </div>
+
+
 
 <footer id="footer" class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
 </body>
 
-<script>
-  $(document).ready(populateTables)
-</script>
+
 
 </html>

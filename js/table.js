@@ -4,7 +4,11 @@ const APIRoot = 'https://localhost:7168/'
 async function populateTables() {
 
     let url = APIRoot+'api/Customers/'
+    document.getElementById('TableBody').replaceChildren()
 
+    if (document.getElementById('testInput').value!=='admin'){
+        return
+    }
     await fetch(url)
         .then((res)=>res.json())
         .then(function (json){
@@ -19,12 +23,15 @@ async function populateTables() {
                     j++
                 }
 
+                if(json[i].email === 'admin'){
+                    //skip
+                } else{
                 createTableElement(
                     json[i].id,
                     json[i].email,
                     dataloggers.toString().replace(',','; ')
                 )
-                i++
+                }i++
             }
         })
 }
