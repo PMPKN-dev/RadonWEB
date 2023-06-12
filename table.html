@@ -54,11 +54,22 @@
         </table>
 
 
+
       </div>
+
     </div>
 
 
+
   </div>
+
+    <div class="col-sm-12 text-center">
+        <button onclick="prevPage()">Previous</button>
+        <b id="currentPageNum"></b>
+        <b>/</b>
+        <b id="totalPageNum"></b>
+        <button onclick="nextPage()">Next</button>
+    </div>
 
 </div>
 
@@ -71,6 +82,7 @@
 
 <script>
     $(document).ready(populateTables())
+    $(document).ready(countPages())
 </script>
 
 </html>
