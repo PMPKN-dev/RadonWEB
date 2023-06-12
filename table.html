@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/universal.css"/>
     <script src="js/bootstrap.min.js"></script>
     <script src="/js/table.js"></script>
+    <script src="js/logout.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
@@ -17,7 +18,7 @@
         <div class="navbar-header">
             <h1>Radon</h1>
         </div>
-
+        <button class="btn btn-outline-dark" id="LogoutButton" onclick="logout()">Log out</button>
     </div>
 </nav>
 
@@ -30,7 +31,7 @@
     </div>
     <div class="col-sm-10">
         <label for="testInput"></label><input id="testInput" placeholder="admin password">
-        <button onclick="populateTables()" class="btn btn-outline-dark" style="margin: 5px">Load Customers</button>
+        <button onclick="populateTables()" class="btn btn-outline-dark" style="margin: 5px">Refresh List</button>
 
         <div  class="container-fluid">
         <!--This is here for copy and paste -->
@@ -67,5 +68,9 @@
   <p>Footer Text</p>
 </footer>
 </body>
+
+<script>
+    $(document).ready(populateTables())
+</script>
 
 </html>

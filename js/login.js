@@ -25,6 +25,7 @@ async function login()
                 console.log('success')
                 document.location = './table.html'
             } else {
+                document.getElementById('alerter').innerHTML = 'Login Failed'
                 console.log('failure')
             }
         })

@@ -25,7 +25,7 @@ async function populateTables() {
                     j++
                 }
 
-                if(json[i].email === 'admin'){
+                if(json[i].id === '6481afd3af2dcae42ea7369c'){
                     //skip
                 } else{
                 createTableElement(
