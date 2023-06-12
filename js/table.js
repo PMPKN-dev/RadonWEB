@@ -6,7 +6,9 @@ async function populateTables() {
     let url = APIRoot+'api/Customers/'
     document.getElementById('TableBody').replaceChildren()
 
-    if (document.getElementById('testInput').value!=='admin'){
+
+
+    if(document.cookie.substring(13)!=='true'){
         return
     }
     await fetch(url)

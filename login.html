@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/universal.css"/>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/login.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid" style="margin: 20px">
+        <div class="navbar-header">
+            <h1>Radon</h1>
+        </div>
+
+    </div>
+</nav>
+
+<div class="container-fluid text-center" style="margin-left: 50px">
+
+
+    <form class="col-sm-3">
+
+        <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword" required>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-outline-dark" onclick="login()" >Log in</button>
+        </div>
+
+        <h6 class="alert">Test</h6>
+    </form>
+</div>
+
+</body>
+</html>
