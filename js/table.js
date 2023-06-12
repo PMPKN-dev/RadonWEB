@@ -6,7 +6,7 @@ let tableBool = true;
 async function populateTables(){
     let url = APIRoot+'api/Customers/'
 
-    setTableTitles()
+    setTableDetails()
     countPages()
 
 
@@ -137,19 +137,23 @@ function filterTable() {
 
 }
 
-function setTableTitles(){
+function setTableDetails(){
     let T1 = document.getElementById("TableTitle1")
     let T2 = document.getElementById("TableTitle2")
     let T3 = document.getElementById("TableTitle3")
+    let S = document.getElementById("tableSearch")
+
     if (tableBool){
         T1.innerHTML = 'E-Mail'
         T2.innerHTML = 'ID'
         T3.innerHTML = 'Loggers'
+        S.disabled = false
 
     } else if(!tableBool){
         T1.innerHTML = 'Device'
         T2.innerHTML = 'Status'
         T3.innerHTML = 'ID'
+        S.disabled = true
     }
 }
 
