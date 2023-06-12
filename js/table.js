@@ -1,8 +1,15 @@
 const APIRoot = 'https://localhost:7168/'
 
+//initial page number
 let pageNum = 0;
+// a toggle for the table which defines whether the table looks up customers or non-assigned dataloggers
 let tableBool = true;
 
+/**
+ * Populates the table based on the current value of tableBool
+ * Additionally, sets table details and page count
+ * @returns {Promise<void>}
+ */
 async function populateTables(){
     let url = APIRoot+'api/Customers/'
 
@@ -67,6 +74,7 @@ async function populateTables(){
             })
     }
 }
+
 function toggleTable(){
     tableBool = !tableBool
     populateTables()
@@ -82,6 +90,10 @@ function nextPage(){
     populateTables()
 }
 
+/**
+ * Counts total amount of pages based on an API call based on tableBool
+ * @returns {Promise<void>}
+ */
 async function countPages(){
     let url = APIRoot
 
@@ -107,6 +119,10 @@ async function countPages(){
 
 }
 
+/**
+ * Filters the table based on an input from the 'tableSearch' element.
+ * Distinguishes fully numeric and mixed inputs and searches the corresponding Column accordingly
+ */
 function filterTable() {
     var input, filter, table, tr, td, i, txtValue;
 
@@ -137,6 +153,7 @@ function filterTable() {
 
 }
 
+
 function setTableDetails(){
     let T1 = document.getElementById("TableTitle1")
     let T2 = document.getElementById("TableTitle2")
@@ -157,26 +174,30 @@ function setTableDetails(){
     }
 }
 
-function createTableElement(ID,email,loggers) {
+/**
+ * Creates a row of data in the table with given params
+ * @param first
+ * @param second
+ * @param third
+ */
+function createTableElement(first,second,third) {
     let table = document.getElementById('TableBody')
 
     let row = document.createElement('tr')
 
-    let emailCol = document.createElement('td')
-    emailCol.setAttribute('style','background: mintcream')
-    emailCol.innerHTML = email
+    let firstCol = document.createElement('td')
+    firstCol.setAttribute('style','background: mintcream')
+    firstCol.innerHTML = second
 
-    let IDCol = document.createElement('td')
-    IDCol.setAttribute('style','background: mintcream')
-    IDCol.innerHTML = ID
+    let secondCol = document.createElement('td')
+    secondCol.setAttribute('style','background: mintcream')
+    secondCol.innerHTML = first
 
 
-    let loggersCol = document.createElement('td')
-    loggersCol.setAttribute('style','background: mintcream')
-    loggersCol.innerHTML = loggers
+    let thirdCol = document.createElement('td')
+    thirdCol.setAttribute('style','background: mintcream')
+    thirdCol.innerHTML = third
 
-    row.append(emailCol ,IDCol ,loggersCol)
+    row.append(firstCol ,secondCol ,thirdCol)
     table.append(row)
-
-
 }
