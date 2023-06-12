@@ -29,7 +29,7 @@
         <p style="margin: 3px"><button onclick="document.location='./table.html'" class="btn btn-outline-dark" >Table</button></p>
     </div>
     <div class="col-sm-10">
-        <input id="testInput" placeholder="admin password">
+        <label for="testInput"></label><input id="testInput" placeholder="admin password">
         <button onclick="populateTables()" class="btn btn-outline-dark" style="margin: 5px">Load Customers</button>
 
         <div  class="container-fluid">
@@ -41,9 +41,9 @@
         <table  class="table">
           <thead >
           <tr >
-            <th scope="col">ID</th>
             <th scope="col">Email</th>
-            <th scope="col">Data-loggers</th>
+              <th scope="col">ID</th>
+              <th scope="col">Data-loggers</th>
           </tr>
           </thead>
 

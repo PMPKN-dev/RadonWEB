@@ -41,19 +41,20 @@ function createTableElement(ID,email,loggers) {
 
     let row = document.createElement('tr')
 
+    let emailCol = document.createElement('td')
+    emailCol.setAttribute('style','background: mintcream')
+    emailCol.innerHTML = email
+
     let IDCol = document.createElement('td')
     IDCol.setAttribute('style','background: mintcream')
     IDCol.innerHTML = ID
 
-    let emailCol = document.createElement('td')
-    emailCol.setAttribute('style','background: mintcream')
-    emailCol.innerHTML = email
 
     let loggersCol = document.createElement('td')
     loggersCol.setAttribute('style','background: mintcream')
     loggersCol.innerHTML = loggers
 
-    row.append(IDCol,emailCol,loggersCol)
+    row.append(emailCol ,IDCol ,loggersCol)
     table.append(row)
 
 
