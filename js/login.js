@@ -20,13 +20,10 @@ async function login()
             ){
                 //if same, create a document.cookie.session that expires in 6 hours
                 let expiry = new Date().getTime() +  5 * 60 * 1000 //we love this standard . . . .
-                document.cookie = 'adminSession = true; expires '+ expiry
-                console.log(document.cookie)
-                console.log('success')
+                document.cookie = 'adminSession = true; expires '+ expiry +';'
                 document.location = './table.html'
             } else {
                 document.getElementById('alerter').innerHTML = 'Login Failed'
-                console.log('failure')
             }
         })
 

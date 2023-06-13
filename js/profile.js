@@ -1,7 +1,10 @@
 const APIRoot = 'https://localhost:7168/api/'
-const customerID = '648812cefc100840f964d879'
+
 
 async function populateData(){
+    console.log(document.cookie)
+
+
     //async call to load info
     await loadCustomerInfo()
         //first hardcode, then make load from cookie
@@ -14,7 +17,7 @@ async function populateData(){
 async function loadCustomerInfo(){
     let email = document.getElementById('customerEmail')
 
-    let url = APIRoot+'Customers/'+customerID
+    let url = APIRoot+'Customers/'+'6481afd3af2dcae42ea7369c'
 
     await fetch(url)
         .then((res) => res.json())
@@ -26,7 +29,7 @@ async function loadCustomerInfo(){
 
 async function populateTable(){
 
-    let url = APIRoot+'Customers/'+customerID
+    let url = APIRoot+'Customers/'+'6481afd3af2dcae42ea7369c'
 
     await fetch(url)
         .then((res)=>res.json())

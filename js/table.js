@@ -21,7 +21,7 @@ async function populateTables(){
 
     document.getElementById('currentPageNum').innerHTML = (pageNum+1).toString()
 
-    if(document.cookie.substring(13)!=='true'){ return }
+    if(document.cookie.adminSession){ return }
 
 
     if (tableBool){
@@ -65,11 +65,11 @@ async function populateTables(){
             .then(function (json){
 
                 let i= pageNum * 10; //customer iterator
-                    createTableElement(
-                        'Unassigned',
-                        'Device',
-                        json[i].serialnumber
-                        )
+                createTableElement(
+                    'Unassigned',
+                    'Device',
+                    json[i].serialnumber
+                )
                 i++
             })
     }
@@ -174,6 +174,13 @@ function setTableDetails(){
     }
 }
 
+
+function openCustomer(id){
+    let expiry = new Date().getTime()  + 5* 60 * 1000 //we love this standard . . . .
+    document.cookie = 'customerID = '+id+'; expires '+ expiry +';'
+    document.location = './profile.html'
+}
+
 /**
  * Creates a row of data in the table with given params
  * @param first
@@ -187,7 +194,18 @@ function createTableElement(first,second,third) {
 
     let firstCol = document.createElement('td')
     firstCol.setAttribute('style','background: mintcream')
-    firstCol.innerHTML = second
+
+    if (tableBool){
+        let reference = document.createElement('a')
+        reference.setAttribute('onClick','openCustomer("'+first+'")')
+        reference.href = '#'
+        reference.innerHTML = second
+        firstCol.append(reference)
+
+    } else {
+        firstCol.innerHTML = second
+
+    }
 
     let secondCol = document.createElement('td')
     secondCol.setAttribute('style','background: mintcream')
