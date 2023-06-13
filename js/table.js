@@ -35,7 +35,7 @@ async function populateTables(){
 
                 let i= pageNum * 10; //customer iterator
 
-                while(i<json.length)
+                for(let count = 0;count<10;count++)
                 {
                     let j = 0 //loggers iterator
                     let dataloggers = []
@@ -52,7 +52,7 @@ async function populateTables(){
                             json[i].email,
                             dataloggers.toString().replace(',','; ')
                         )
-                    }i++
+                    } i++
                 }
             })
     }
