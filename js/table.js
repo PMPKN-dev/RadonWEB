@@ -1,4 +1,4 @@
-const APIRoot = 'https://localhost:7168/'
+const APIRoot = 'https://localhost:7168/api/'
 
 //initial page number
 let pageNum = 0;
@@ -11,13 +11,13 @@ let tableBool = true;
  * @returns {Promise<void>}
  */
 async function populateTables(){
-    let url = APIRoot+'api/Customers/'
+    let url = APIRoot+'Customers/'
 
     setTableDetails()
     countPages()
 
 
-    document.getElementById('TableBody').replaceChildren()
+    document.getElementById('tableBody').replaceChildren()
 
     document.getElementById('currentPageNum').innerHTML = (pageNum+1).toString()
 
@@ -27,7 +27,7 @@ async function populateTables(){
     if (tableBool){
 
 
-        url = APIRoot+'api/Customers/'
+        url = APIRoot+'Customers/'
 
         await fetch(url)
             .then((res)=>res.json())
@@ -58,7 +58,7 @@ async function populateTables(){
     }
     else if (!tableBool){
 
-        url = APIRoot+'api/Dataloggers/'
+        url = APIRoot+'Dataloggers/'
 
         await fetch(url)
             .then((res)=>res.json())
@@ -98,9 +98,9 @@ async function countPages(){
     let url = APIRoot
 
     if (tableBool){
-        url +='api/Customers/'
+        url +='Customers/'
     } else if (!tableBool){
-        url += 'api/Dataloggers/'
+        url += 'Dataloggers/'
     }
 
     let i = 0
@@ -128,7 +128,7 @@ function filterTable() {
 
     input = document.getElementById("tableSearch");
     filter = input.value.toUpperCase();
-    table = document.getElementById("TableBody");
+    table = document.getElementById("tableBody");
 
     tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
@@ -181,7 +181,7 @@ function setTableDetails(){
  * @param third
  */
 function createTableElement(first,second,third) {
-    let table = document.getElementById('TableBody')
+    let table = document.getElementById('tableBody')
 
     let row = document.createElement('tr')
 
