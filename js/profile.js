@@ -2,22 +2,44 @@ const APIRoot = 'https://localhost:7168/api/'
 
 
 async function populateData(){
-    console.log(document.cookie)
 
+    let id = getID()
 
     //async call to load info
-    await loadCustomerInfo()
+    await loadCustomerInfo(id)
         //first hardcode, then make load from cookie
     //async call to populate table
-    await populateTable()
+    await populateTable(id)
+}
+
+function getID(){
+    let array = document.cookie.split('; ')
+    let result = []
+
+    array.forEach(
+        function (element) {
+            if (element.substring(0,10)==='customerID'){
+                result = element.split('=')
+            }
+        }
+    )
+    if (result[1] === ''){
+        return 'none'
+    }
+    return result[1]
+
 
 
 }
 
-async function loadCustomerInfo(){
+async function loadCustomerInfo(id){
     let email = document.getElementById('customerEmail')
 
-    let url = APIRoot+'Customers/'+'6481afd3af2dcae42ea7369c'
+    let url = APIRoot+'Customers/'+id
+
+    if (id === 'none'){
+        email.innerHTML = 'Failed to load user data'
+    }
 
     await fetch(url)
         .then((res) => res.json())
@@ -27,9 +49,9 @@ async function loadCustomerInfo(){
 
 }
 
-async function populateTable(){
+async function populateTable(id){
 
-    let url = APIRoot+'Customers/'+'6481afd3af2dcae42ea7369c'
+    let url = APIRoot+'Customers/'+id
 
     await fetch(url)
         .then((res)=>res.json())
