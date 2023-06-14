@@ -1,0 +1,141 @@
+{
+  "Customer": [
+    {
+      "email": "Kullervo@Duviri.void",
+      "password": "SevenCrimes",
+      "dataloggers": [
+        {
+         "serialnumber": "DUV147KLR",
+          "name": "Archimedean",
+          "location": "Cell 4"
+        }
+      ]
+    },
+    {
+      "email": "Yonta@Archimedean.void",
+      "password": "SevenCrimes",
+      "dataloggers": [
+        {
+          "serialnumber": "ZRM147YNT",
+          "name": "Yonta",
+          "location": "Zariman"
+        }
+      ]
+    },
+    {
+      "email": "Hildryn@Ayatan.void",
+      "password": "400Strength",
+      "dataloggers": [
+        {
+          "serialnumber": "DYE400LFT",
+          "name": "Whey",
+          "location": "Gym"
+        }
+      ]
+    },
+    {
+      "email": "Ivara@Ayatan.void",
+      "password": "Artemis",
+      "dataloggers": [
+        {
+          "serialnumber": "STE135ALT",
+          "name": "Arrow",
+          "location": "Who knows"
+        }
+      ]
+    },
+    {
+      "email": "Chroma@Ayatan.void",
+      "password": "DragonKnight",
+      "dataloggers": [
+        {
+          "serialnumber": "BRE234ATH",
+          "name": "Vex",
+          "location": "Soaring"
+        }
+      ]
+    },
+    {
+      "email": "Gauss@Solaris.void",
+      "password": "11mps",
+      "dataloggers": [
+        {
+          "serialnumber": "TOO117FST",
+          "name": "Thermal Sunder",
+          "location": "Zoomin"
+        }
+      ]
+    },
+    {
+      "email": "Grendel@Arbiters.void",
+      "password": "Pulverize",
+      "dataloggers": [
+        {
+          "serialnumber": "GOD221KNS",
+          "name": "Nourishment",
+          "location": "In ma belly"
+        }
+      ]
+    },
+    {
+      "email": "Xaku@Deimos.void",
+      "password": "the3ofme",
+      "dataloggers": [
+        {
+          "serialnumber": "DEI555MOS",
+          "name": "Vast Untime",
+          "location": "Everywhere"
+        }
+      ]
+    },
+    {
+      "email": "Harrow@Ayatan.void",
+      "password": "PENANCE",
+      "dataloggers": [
+        {
+          "serialnumber": "RAP385TAP",
+          "name": "Covenant",
+          "location": "Void"
+        }
+      ]
+    },
+    {
+      "email": "Nidus@Ayatan.void",
+      "password": "Maggots:3",
+      "dataloggers": [
+        {
+          "serialnumber": "ALL211ONE",
+          "name": "Larva",
+          "location": "In yo face"
+        }
+      ]
+    },
+    {
+      "email": "Wukong@Ayatan.void",
+      "password": "MonkeyPaw",
+      "dataloggers": [
+        {
+          "serialnumber": "CLS222TAL",
+          "name": "Banana",
+          "location": "With me. Always"
+        }
+      ]
+    },
+    {
+      "email": "Citrine@Deimos.void",
+      "password": "Gemussy",
+      "dataloggers": [
+        {
+          "serialnumber": "DAT523GEM",
+          "name": "Crystal",
+          "location": "like 12 foot in front of me"
+        }
+      ]
+    }
+  ]
+
+
+
+
+
+}

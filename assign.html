@@ -5,9 +5,12 @@
     <title>assign</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/universal.css">
-    <script src="js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="js/login.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/assign.js"></script>
+    <script src="js/logout.js"></script>
 
 </head>
 <body>
@@ -28,16 +31,44 @@
         </div>
 
         <div class="col-sm-10">
-            <div  class="container-fluid">
+            <div  class="container-fluid" style="background-color: mintcream">
                 <!--This is here for copy and paste -->
 
                 <!--#region main  -->
                 <!--#endregion -->
 
+                <h1 id="customerEmail">email</h1>
 
 
+                <div class="col-sm-8">
+
+                    <label>
+                        Action
+                        <select name="actions" id="actions">
+                            <option value="volvo">select ...</option>
+                            <option value="saab">Add</option>
+                            <option value="opel">Remove</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Datalogger serial number
+                        <input type="text" title="NYI" disabled>
+                    </label>
+
+                    <label>
+                        Customer Email
+                        <input type="text" id="email">
+                    </label>
 
 
+                    <br>
+                    <button class="btn btn-success" style="margin: 5px">
+                        confirm
+                    </button>
+
+
+                </div>
 
 
 
@@ -50,9 +81,17 @@
     </div>
 </div>
 
+
+
+
+
 <footer id="footer" class="container-fluid text-center">
     <p>Footer Text</p>
 </footer>
 </body>
+
+<script>
+    $(document).ready(init())
+</script>
 
 </html>
