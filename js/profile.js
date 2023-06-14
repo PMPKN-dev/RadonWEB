@@ -1,15 +1,12 @@
 const APIRoot = 'https://localhost:7168/api/'
 
-
 async function populateData(){
 
-    let id = getID()
-
     //async call to load info
-    await loadCustomerInfo(id)
-        //first hardcode, then make load from cookie
+    await loadCustomerInfo(getID())
+
     //async call to populate table
-    await populateTable(id)
+    await populateTable(getID())
 }
 
 function getID(){
@@ -27,9 +24,6 @@ function getID(){
         return 'none'
     }
     return result[1]
-
-
-
 }
 
 async function loadCustomerInfo(id){
@@ -46,7 +40,6 @@ async function loadCustomerInfo(id){
         .then(function (json) {
             email.innerHTML = json.email
         })
-
 }
 
 async function populateTable(id){
@@ -60,9 +53,7 @@ async function populateTable(id){
             for(let i = 0; i<json.dataloggers.length;i++) {
                 createTableElement(json.dataloggers[i].id,json.dataloggers[i].location,json.dataloggers[i].name)
             }
-
         })
-
 }
 
 
@@ -87,4 +78,3 @@ function createTableElement(first,second,third) {
     row.append(firstCol ,secondCol,thirdCol)
     table.append(row)
 }
-

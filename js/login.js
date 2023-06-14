@@ -26,6 +26,4 @@ async function login()
                 document.getElementById('alerter').innerHTML = 'Login Failed'
             }
         })
-
-
 }

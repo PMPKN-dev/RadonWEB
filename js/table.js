@@ -81,12 +81,12 @@ function toggleTable(){
 }
 
 function prevPage(){
-    pageNum -=1
+    pageNum--
     populateTables()
 }
 
 function nextPage(){
-    pageNum +=1
+    pageNum++
     populateTables()
 }
 
@@ -115,7 +115,6 @@ async function countPages(){
         })
 
     document.getElementById('totalPageNum').innerHTML = (Math.round(i/10)+1).toString()
-
 
 }
 
@@ -204,7 +203,6 @@ function createTableElement(first,second,third) {
 
     } else {
         firstCol.innerHTML = second
-
     }
 
     let secondCol = document.createElement('td')
